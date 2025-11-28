@@ -13,6 +13,7 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 app.use('/', profileRouter);
+app.use("/search", require("./routes/searchRoutes"));
 
 connectDB();
 
@@ -24,8 +25,6 @@ app.use("/auth", require("./routes/authRoutes"));
 app.use("/categories", require("./routes/categoryRoutes"));
 app.use("/locations", require("./routes/locationRoutes"));
 app.use("/ratings", require("./routes/ratingRoutes"));
-app.use("/reports", require("./routes/reportRoutes"));
-app.use("/policy", require("./routes/policyRoutes"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

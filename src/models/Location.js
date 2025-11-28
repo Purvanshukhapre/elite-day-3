@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const locationSchema = new mongoose.Schema({
   role: String,
   location: String,
-  product: String,
+  Region : String,
   popular: Boolean
 });
 
